@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <vector>
 using namespace std;
 struct City{
@@ -13,16 +12,19 @@ struct City{
 int main()
 {
 	vector<City> cities;
-	fstream file;
-	file.open("cities10k.txt", ios::in);
-	if(file.is_open()) 
+	City c;
+	ifstream file("cities10k.txt");
+	string name;
+	double lat, lon;
+	if(file.is_open())
 	{
-		string line;
-		while(getline(file, line))
+		while(file>>name>>lat>>lon)
 		{
-			cout<<line<<endl;
+			cout<<name<<endl;
 		}
+		
 	}
+	file.close();
 
 
 
