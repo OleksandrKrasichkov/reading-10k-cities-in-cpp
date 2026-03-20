@@ -18,9 +18,9 @@ int main()
 	double lat, lon;
 	if(file.is_open())
 	{
-		while(file>>name>>lat>>lon)
+		while(file>>c.name>>c.lat>>c.lon)
 		{
-			cout<<name<<endl;
+			cities.push_back(c);
 		}
 		
 	}
